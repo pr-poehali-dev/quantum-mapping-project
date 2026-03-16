@@ -2,6 +2,7 @@ import { Canvas, extend, useFrame } from "@react-three/fiber"
 import { useAspect, useTexture } from "@react-three/drei"
 import { useMemo, useRef, useState, useEffect } from "react"
 import * as THREE from "three"
+import { Button } from "@/components/ui/button"
 
 const TEXTUREMAP = { src: "https://i.postimg.cc/XYwvXN8D/img-4.png" }
 const DEPTHMAP = { src: "https://i.postimg.cc/2SHKQh2q/raw-4.webp" }
@@ -72,8 +73,8 @@ const Scene = () => {
         // Flow effect based on progress
         float flow = 1.0 - smoothstep(0.0, 0.02, abs(depth - uProgress));
 
-        // Red scanning overlay
-        vec3 mask = vec3(dot * flow * 10.0, 0.0, 0.0);
+        // Blue scanning overlay
+        vec3 mask = vec3(0.0, dot * flow * 4.0, dot * flow * 10.0);
 
         // Combine effects
         vec3 final = baseColor.rgb + mask;
@@ -114,8 +115,8 @@ const Scene = () => {
 }
 
 export const Hero3DWebGL = () => {
-  const titleWords = "Synapse AI".split(" ")
-  const subtitle = "Нейроинтерфейсы нового поколения."
+  const titleWords = "AI-голоса, которые продают 24/7".split(" ")
+  const subtitle = "Нейросеть заменит колл-центр: в 10 раз дешевле человека, без ожидания и очередей"
   const [visibleWords, setVisibleWords] = useState(0)
   const [subtitleVisible, setSubtitleVisible] = useState(false)
   const [delays, setDelays] = useState<number[]>([])
@@ -145,9 +146,9 @@ export const Hero3DWebGL = () => {
         <div className="absolute top-0 bottom-0 right-0 w-32 bg-gradient-to-l from-black to-transparent" />
       </div>
 
-      <div className="h-screen uppercase items-center w-full absolute z-[60] pointer-events-none px-10 flex justify-center flex-col">
-        <div className="text-3xl md:text-5xl xl:text-6xl 2xl:text-7xl font-extrabold font-orbitron">
-          <div className="flex space-x-2 lg:space-x-6 overflow-hidden text-white">
+      <div className="h-screen items-center w-full absolute z-[60] px-6 md:px-10 flex justify-center flex-col">
+        <div className="text-3xl md:text-5xl xl:text-6xl 2xl:text-7xl font-extrabold font-orbitron text-center">
+          <div className="flex flex-wrap gap-2 lg:gap-4 overflow-hidden text-white justify-center">
             {titleWords.map((word, index) => (
               <div
                 key={index}
@@ -157,12 +158,12 @@ export const Hero3DWebGL = () => {
                   opacity: index < visibleWords ? undefined : 0,
                 }}
               >
-                {word}
+                {index === 0 ? <span className="text-blue-400">{word}</span> : word}
               </div>
             ))}
           </div>
         </div>
-        <div className="text-xs md:text-xl xl:text-2xl 2xl:text-3xl mt-2 overflow-hidden text-white font-bold max-w-4xl mx-auto text-center px-4">
+        <div className="text-sm md:text-xl xl:text-2xl mt-4 overflow-hidden text-gray-200 font-medium max-w-3xl mx-auto text-center px-4">
           <div
             className={subtitleVisible ? "fade-in-subtitle" : ""}
             style={{
@@ -173,6 +174,19 @@ export const Hero3DWebGL = () => {
             {subtitle}
           </div>
         </div>
+        {subtitleVisible && (
+          <div
+            className="mt-8 fade-in pointer-events-auto"
+            style={{ animationDelay: `${titleWords.length * 0.13 + 1.0 + subtitleDelay}s` }}
+          >
+            <Button
+              size="lg"
+              className="bg-blue-500 hover:bg-blue-600 text-white font-geist text-lg px-8 py-6 pulse-button border-0 shadow-lg shadow-blue-500/30"
+            >
+              🎧 Попробовать демо
+            </Button>
+          </div>
+        )}
       </div>
 
       <Canvas

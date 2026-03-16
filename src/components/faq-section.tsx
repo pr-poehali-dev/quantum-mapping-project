@@ -3,55 +3,55 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 export function FAQSection() {
   const faqs = [
     {
-      question: "Насколько безопасна процедура SynapseAI?",
+      question: "Насколько естественно звучит AI-бот?",
       answer:
-        "Да, процедура выполняется прецизионным хирургическим роботом и прошла обширное тестирование. Все материалы биосовместимы и одобрены FDA для медицинского применения.",
+        "Наши боты используют синтез речи последнего поколения — без роботизированного тона и пауз. Клиенты зачастую не понимают, что говорят с AI, особенно при правильно настроенном скрипте.",
     },
     {
-      question: "Сколько длится операция?",
+      question: "Как быстро можно запустить бота?",
       answer:
-        "Малоинвазивная процедура обычно занимает 2-3 часа и проводится под местной анестезией с седацией.",
+        "Стандартный запуск занимает 3 рабочих дня: настройка скрипта, тестирование, интеграция с вашей CRM. Для сложных сценариев — до 7 дней.",
     },
     {
-      question: "Можно ли удалить устройство?",
+      question: "С какими CRM работает NeuroCall?",
       answer:
-        "Да, SynapseAI разработан полностью обратимым. Устройство можно безопасно удалить при необходимости, хотя это требуется редко.",
+        "Мы интегрируемся с AmoCRM, Bitrix24, а также с любой системой через REST API. Данные из разговора автоматически попадают в карточку клиента.",
     },
     {
-      question: "Какие ощущения при использовании SynapseAI?",
+      question: "Что если клиент спросит что-то нестандартное?",
       answer:
-        "Пользователи отмечают, что управление устройствами силой мысли ощущается естественно и интуитивно после короткого периода обучения. От самого импланта нет физических ощущений.",
+        "Бот распознаёт нестандартные ситуации и может переключить звонок на живого оператора или взять контакт для перезвона. Сценарий эскалации настраивается под вас.",
     },
     {
-      question: "Как долго работает батарея?",
+      question: "Сколько стоит решение?",
       answer:
-        "Устройство заряжается беспроводным способом и работает полный день на одном заряде. Зарядка выполняется внешним устройством, размещаемым рядом с головой.",
+        "Стоимость зависит от объёма звонков и сценариев. Есть тестовый период. Свяжитесь с нами — подберём оптимальный тариф под ваш бизнес.",
     },
     {
-      question: "Кто может получить SynapseAI?",
+      question: "Мои данные и данные клиентов в безопасности?",
       answer:
-        "В настоящее время мы фокусируемся на людях с тяжелым параличом. Соответствие определяется через комплексную медицинскую оценку.",
+        "Все данные хранятся на серверах в России, передаются по зашифрованным каналам. Работаем в соответствии с 152-ФЗ о персональных данных.",
     },
   ]
 
   return (
-    <section className="py-24 bg-black">
+    <section id="faq" className="py-24 bg-black">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 font-orbitron">Частые вопросы</h2>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto font-space-mono">
-            Ответы на популярные вопросы о технологии SynapseAI, безопасности и опыте пациентов.
+          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+            Ответы на популярные вопросы об AI-голосовых ботах NeuroCall Solutions.
           </p>
         </div>
 
         <div className="max-w-4xl mx-auto">
           <Accordion type="single" collapsible className="w-full">
             {faqs.map((faq, index) => (
-              <AccordionItem key={index} value={`item-${index}`} className="border-red-500/20 mb-4">
-                <AccordionTrigger className="text-left text-lg font-semibold text-white hover:text-red-400 font-orbitron px-6 py-4">
+              <AccordionItem key={index} value={`item-${index}`} className="border-blue-500/20 mb-4">
+                <AccordionTrigger className="text-left text-lg font-semibold text-white hover:text-blue-400 font-orbitron px-6 py-4">
                   {faq.question}
                 </AccordionTrigger>
-                <AccordionContent className="text-gray-300 leading-relaxed px-6 pb-4 font-space-mono">
+                <AccordionContent className="text-gray-300 leading-relaxed px-6 pb-4">
                   {faq.answer}
                 </AccordionContent>
               </AccordionItem>
