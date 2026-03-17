@@ -12,9 +12,7 @@ export function Footer() {
             <p className="text-gray-300 mb-2 max-w-md">
               AI-голосовые боты для автоматизации обзвона и записи клиентов.
             </p>
-            <p className="text-gray-400 text-sm mb-6">
-              📧 hello@neurocall.ru &nbsp;·&nbsp; 📞 +7 (800) 000-00-00
-            </p>
+            <p className="text-gray-400 text-sm mb-6">📧 hello@neurocall.ru  ·  📞 +7 (977) 606-89-01</p>
             <div className="flex space-x-4">
               <a href="#" className="text-gray-400 hover:text-blue-400 transition-colors duration-200">
                 <Twitter size={20} />
