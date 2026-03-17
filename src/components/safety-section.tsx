@@ -63,7 +63,7 @@ export function SafetySection() {
             </div>
             <div className="flex items-center gap-2">
               <Icon name="Mic" size={16} className="text-blue-400" />
-              <div className="flex gap-0.5">
+              <div className="flex gap-1.5">
                 {[...Array(5)].map((_, i) => (
                   <div
                     key={i}
