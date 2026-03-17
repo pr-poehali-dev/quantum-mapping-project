@@ -146,7 +146,7 @@ export const Hero3DWebGL = () => {
         <div className="absolute top-0 bottom-0 right-0 w-32 bg-gradient-to-l from-black to-transparent" />
       </div>
 
-      <div className="h-screen items-center w-full absolute z-[60] md:px-10 flex justify-center flex-col px-[35px]">
+      <div className="h-screen items-center w-full absolute z-[60] md:px-10 flex justify-center flex-col px-[35px] py-[5px]">
         <div className="text-3xl md:text-5xl xl:text-6xl 2xl:text-7xl font-extrabold font-orbitron text-center">
           <div className="flex flex-wrap gap-2 lg:gap-4 overflow-hidden text-white justify-center">
             {titleWords.map((word, index) => (
