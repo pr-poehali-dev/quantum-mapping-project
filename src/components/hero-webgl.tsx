@@ -182,6 +182,7 @@ export const Hero3DWebGL = () => {
             <Button
               size="lg"
               className="bg-blue-500 hover:bg-blue-600 text-white font-geist text-lg px-8 py-6 pulse-button border-0 shadow-lg shadow-blue-500/30"
+              onClick={() => window.open("https://mem-hub.ru/?sort=count", "_blank")}
             >
               🎧 Попробовать демо
             </Button>
