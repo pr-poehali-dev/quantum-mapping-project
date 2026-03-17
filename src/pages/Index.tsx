@@ -3,6 +3,7 @@ import { FeaturesSection } from "@/components/features-section"
 import { TechnologySection } from "@/components/technology-section"
 import { ApplicationsTimeline } from "@/components/applications-timeline"
 import { SafetySection } from "@/components/safety-section"
+import { RealCallsSection } from "@/components/real-calls-section"
 import { TestimonialsSection } from "@/components/testimonials-section"
 import { FAQSection } from "@/components/faq-section"
 import { CTASection } from "@/components/cta-section"
@@ -23,6 +24,7 @@ export default function Index() {
         <section id="safety">
           <SafetySection />
         </section>
+        <RealCallsSection />
         <TestimonialsSection />
         <section id="faq">
           <FAQSection />
